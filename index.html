@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FrndzGrocery Store</title>
+	<link rel="shortcut icon" href="pack1.png">
+	<script type="text/javascript" src="cartpage.js"></script>
+	<!----------------StyleSheet------------------>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+</head>
+<body id="body1">
+<!---NavBar----------------------------------------------------->
+
+<nav class="navbar">
+	<!---logo---------->
+	<a href="home.html" class="logo1"><span>Frndz</span>Grocery</a>
+	<!---Menu---------->
+	<ul class="menu">
+		<li><a href="home.html">Home</a></li>
+		<li><a href="#catogery">Categories</a></li>
+		<li><a href="#popular-pack">Package</a></li>
+		<li><a href="#app">Our App</a></li>
+	</ul>
+
+	<div class="nav-right">
+		<!---like---------->
+		<a class="like like1"><i class="far fa-heart"></i></a>
+		<!---cart---------->
+		<a class="cart1"><i class="fas fa-shopping-cart" onclick="display()"></i><span class="cartcount">0</span></a>
+		<!---user-pop------>
+		<div class="center">
+         <input type="checkbox" id="show">
+         <a href="#" class="user"><label for="show" class="show-btn"><img src="member-8.png" style="width: 35px;height: 35px;border-radius: 50%;cursor: pointer;"></label></a>
+         <div class="popup">
+            <label for="show" class="close-btn fas fa-times" title="close"></label>
+            <div class="text">
+               Login
+            </div>
+            <form action="#">
+               <div class="data">
+                  <label>Email or Phone</label>
+                  <input type="text" required>
+               </div>
+               <div class="data">
+                  <label>Password</label>
+                  <input type="password" required>
+               </div>
+               <div class="pass">
+                  <span>Forgot Password?</span>
+               </div>
+               <div class="btn">
+                  <button type="submit">login</button>
+               </div>
+               <div class="sign">
+                  <p>Login or Signup</p>
+               </div>
+            </form>
+         </div>
+      </div>
+</nav>
+<!---NavBar-end------------------------------------------------->
+<hr>
+<div class="productpage1">
+<div>
+    <h3 class="cart-heading">CartPage</h3>
+    <hr>
+</div>
+ <div  class="productpage">
+     
+ </div>
+ <div class="cartitem-footer">
+<hr>
+        <div style="margin-left:30%;display:flex;justify-content:space-around:width:60%">
+        <h4>Total Amount to be paid:</h4>
+        <h4 class="cartitem-amount">0</h4>
+        </div>
+         <center><div>
+        <button class="cartitem-clear" onclick="clearcart()">ClearCart</button>
+        <button class="cartitem-order" onclick="placeorder()">Place order</button>
+        </div></center>
+</div>
+</div>
+
+<!---Search-bar------------------------------------------------->
+<center><section class="search-bg">
+
+
+<div class="search">
+	<h1>Order Your Daily <span>Groceries</span></h1>
+	<strong>#Free Delivery</strong>
+<!---search-box--->
+<form class="search-box">
+	<i class="fas fa-search"></i>
+	<input type="search" name="" class="search-input" placeholder="Search Your Daily Groceries" required style="cursor:pointer;">
+	<input type="submit" class="search-btn" value="search" style="cursor:progress;">
+</form>
+</div></section></center>
+<!---Search-bar-end--------------------------------------------->
+
+
+
+
+<!---catogery---------------------------------------------------->
+<section id="catogery">
+	<div class="head">
+	<h1>Catogery</h1>
+	<h3>All</h3>
+    </div>
+<!---catogery-img----> 
+
+<div class="imgs">
+	<a href="#" class="box"><img src="vegetables.png"> <span>Vegetables</span></a>
+	<a href="#" class="box"><img src="medicine.png"><span>Medicine</span></a>
+	<a href="#" class="box"><img src="fish.png"><span>Fish & Meat</span></a>
+	<a href="#" class="box"><img src="Gardening.png"><span>Gardening</span></a>
+	<a href="#" class="box"><img src="baby.png"><span>Baby</span></a>
+	<a href="#" class="box"><img src="beauty.png"><span>Beauty</span></a>
+	<a href="#" class="box"><img src="office.png"><span>Office</span></a>
+</div>
+	
+</section>
+<!---catogery-end------------------------------------------------>
+
+<!---Deal-------------------------------------------------------->
+<section class="deal">
+	<div class="deal-content">
+		
+        <h2 class="title">Deal of the Day</h2>
+        <p>Order using any Debit card or Credit card , get 25%Off upto 1000. Also get Scratch card on <br>every purchase, Min order value is 1500</p>
+    <div class="count-down">
+    	<div class="box1">
+    		<h3 id="day">00</h3>
+    		<span>day</span>
+    	</div>
+    	<div class="box1">
+    		<h3 id="hour">00</h3>
+    		<span>hour</span>
+    	</div>
+    	<div class="box1">
+    		<h3 id="minute">00</h3>
+    		<span>minute</span>
+    	</div>
+    	<div class="box1">
+    		<h3 id="second">00</h3>
+    		<span>second</span>
+    	</div>
+    </div>
+         <button class="dealbtn">Check the Deal</button>
+	</div>
+</section>
+
+
+
+
+
+<!---Deal-end---------------------------------------------------->
+
+<!---Products---------------------------------------------------->
+<section class="product" id="product">
+
+<!---Heading--------> 
+   <div class="product-heading">
+   	       <h2>Popular Product</h2>
+   	       <span>All</span>
+   </div>
+<!---container------> 
+    <div class="product-container">
+    	<div class="product-box">
+    		<img src="apple.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Apple</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">200</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart" data-action="add-to-cart" onclick="hai()"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box">
+    		<img src="garlic.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Garlic</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">150</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart" data-action="add-to-cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box">
+    		<img src="product-6.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Badham</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">600</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+    	   
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box">
+    		<img src="deal-img2.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Fish</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">250</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box">
+    		<img src="chili.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Chili</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">70</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box">
+    		<img src="tamato.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Tomato</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">30</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box">
+    		<img src="product-1.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Banana</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">80</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box">
+    		<img src="product-3.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Orange</h3>
+           <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">90</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+         <div class="product-box">
+    		<img src="product-4.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Milk</h3>
+            <h3 class="quantity">1 Ltr</h3>
+            <h3><span class="price">60</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+         <div class="product-box">
+    		<img src="patato.png" alt="Apple" class="img1">
+    		<h3 class="product-name">potato</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">40</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+         <div class="product-box">
+    		<img src="product-8.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Paneer</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">200</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+         <div class="product-box">
+    		<img src="product-5.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Grapes</h3>
+            <h3 class="quantity">1 KG</h3>
+            <h3><span class="price">100</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!---Products-end------------------------------------------------>
+
+
+<!---Popular-pack------------------------------------------------>
+<section id="popular-pack">
+    <!---Heading--------> 
+   <div class="popular-heading">
+   	       <h2>Popular Packs</h2>
+   	       <span>All</span>
+   </div>
+   <!---container------> 
+    <div class="product-container1">
+    	<div class="product-box1">
+    		<img src="pack1.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Big Pack</h3>
+            <h3 class="quantity">Apple,Grapes,Orange,+4</h3>
+            <h3><span class="price">700</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box1">
+    		<img src="pack2.jpg" alt="Apple" class="img1">
+    		<h3 class="product-name">Large Pack</h3>
+            <h3 class="quantity">Onion,Tomato,chili,Potato,+2</h3>
+            <h3><span class="price">500</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box1">
+    		<img src="pack3.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Small Pack</h3>
+            <h3 class="quantity">Carrot,Beeroot</h3>
+            <h3><span class="price">300</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box1">
+    		<img src="pack-4.jpg" alt="Apple" class="img1">
+    		<h3 class="product-name">Fruits</h3>
+            <h3 class="quantity">PineApple,Papaya,Apple+2</h3>
+            <h3><span class="price">450</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box1">
+    		<img src="pack-5.png" alt="Apple" class="img1">
+    		<h3 class="product-name">Vegetables</h3>
+            <h3 class="quantity">Chili,Onion,+1</h3>
+            <h3><span class="price">150</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+        <div class="product-box1">
+    		<img src="pack-6.jpg" alt="Apple" class="img1">
+    		<h3 class="product-name">Leafy Vegetables</h3>
+            <h3 class="quantity">Pallak,+4</h3>
+            <h3><span class="price">150</span>Rs</h3>
+<!---add to cart------> 
+            <div class="addtocart">
+    	    <button class="cart"><i class="fas fa-shopping-bag"></i> Add To Cart</button>
+<!-----like-btn------> 
+            <p class="like"><i class="far fa-heart"></i></p>
+            </div>
+        </div>
+	</div>
+</section>
+<!---Popular-pack-end-------------------------------------------->
+
+
+
+
+<!---Partner-logo------------------------------------------------>
+ <section class="partner-logo">
+ 	<div class="partner-heading">
+ 		<h2>Our Trusted Partner</h2>
+ 	</div>
+<!---logos------>
+<div class="logo">
+	<img src="logo-1.png" alt="no image">
+	<img src="logo-2.png" alt="no image">
+	<img src="logo-3.png" alt="no image">
+	<img src="logo-4.png" alt="no image">
+</div> 
+
+ </section>
+<!---Partner-end------------------------------------------------->
+
+
+
+
+<!---Download-app------------------------------------------------>
+    <section id="app">
+    	<div class="app">
+	<img src="mobile.webp" height="450px";>
+	<div class="app2">
+		<h4>Get the <span>FrndzGrocery</span> App</h4>
+		<p>We will send a link, open it on your mobile to download the app</p>
+			<div class="radio"><input type="radio" name="app" value="Email" checked > Email  
+	       <input type="radio" name="app" value="phone" checked> Phone
+	  </div>
+	  <div class="email"> 
+	  	<input type="text" name="email" placeholder="Email">
+	  	<a href="#">Share app link</a>
+	  </div>
+	  <small>Download app from</small>
+	  <div class="img">
+	  	<img src="app-store1.webp">
+	  	<img src="app-store2.webp">
+	  </div></div></div>
+    </section>
+
+<!--footerBar------------------------------------------------------>
+
+    <section class="footer-bar">
+		<div class="container">
+			<div class="oye">
+				<a href="home.html" class="logo2"><span>Frndz</span>Grocery</a>
+			</div>
+			<div class="links">
+				<ul>
+					<li><h4 class="footer-list-title">COMPANY</h4></li>
+					<li><a href="#">Who We Are</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Report Fraud</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Financial Information</a></li>
+				</ul>
+				<ul>
+					<li><h4 class="footer-list-title">FOR FOODIES</h4></li>
+					<li><a href="#">Code of Conduct</a></li>
+					<li><a href="#">Community</a></li>
+					<li><a href="#">Blogger Help</a></li>
+					<li><a href="#">Mobile Apps</a></li>
+				</ul>
+				<ul>
+					<li><h4 class="footer-list-title">FOR RESTAURANTS</h4></li>
+					<li><a href="#">Add Restaurant</a></li>
+					<li><a href="#">Claim your Listing</a></li>
+					<li><a href="#">Business App</a></li>
+					<li><a href="#">Restaurant Widgets</a></li>
+					<li><a href="#">Product Businesses</a></li>
+				</ul>
+				<ul>
+					<li><h4 class="footer-list-title">FOR YOU</h4></li>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Security</a></li>
+					<li><a href="#">Sitemap</a></li>
+				</ul>
+				<ul>
+					<li style="color: white;"><h4 class="social-link">SOCIAL LINKS</h4></li>
+					<li><img src="facebook.png" width="20px";height="20px"></li>
+					<li><img src="instagram.png" width="20px";height="20px"></li>
+                    <li><img src="twitter.png" width="20px";height="20px"></li>
+					</ul>
+              
+				</div>
+		
+			<div class="footer-copyright">
+				<p><small>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2023 &copy; FrndzGrocery<sup>&trade;</sup> Ltd. All rights reserved.</small></p>
+			</div>
+		</div></div>
+		
+	</section>
+<!--footerBar-end--------------------------------------------------->
+<script type="text/javascript">
+let carttotal=0;
+let count=0
+const cartpage=document.getElementsByClassName('productpage')[0]     
+var addtocartbtn=document.querySelectorAll('.cart')
+addtocartbtn.forEach(addtocartbtn=>{
+    addtocartbtn.addEventListener("click",()=>{
+        const productDom=addtocartbtn.parentNode.parentNode;
+        const product={
+            img:productDom.querySelector('.img1').getAttribute("src"),
+            name:productDom.querySelector('.product-name').innerText,
+            price:productDom.querySelector('.price').innerText,
+            qnty:1
+        };
+        count=count+1
+        document.getElementsByClassName('cartcount')[0].innerHTML=count
+        carttotal+=parseInt(product.price)
+document.querySelector('.cartitem-amount').innerText=carttotal
+        addtocartbtn.disabled=true
+        cartpage.innerHTML+=`
+            <div class="cartitem" style="margin:15px;display:flex;justify-content:space-around">
+      
+            <img src="${product.img}" style="width:100px;height:100px;object-fit:contain;vertical-align:bottom" class="cartimg">
+            <div>
+            <h4 class="cartitem-name">${product.name}</h4>
+            </div>
+            <div>
+            <h4 class="cartitem-price">${product.price}</h4>
+            </div>
+            <div>
+            <button class="cartitem-incr">&plus;</button>
+            <span class="cartitem-qnty">${product.qnty}</span>
+            <button class=cartitem-decr>&minus;</button>
+            </div>
+            <div>
+            <p class="cartitem-total" style="font-weight:bold">${product.price}</p>
+            </div>
+            <div>
+            <button class="cartitem-close">&times;</button>
+            </div>
+            </div>`;
+            var cartitems=document.querySelectorAll('.cartitem')
+                       cartitems.forEach(cartitems=>{
+                       let incrbtn=cartitems.querySelector('.cartitem-incr')
+                    let decrbtn=cartitems.querySelector('.cartitem-decr')
+                    let clsbtn=cartitems.querySelector('.cartitem-close')
+                       var cartitemqnty=cartitems.querySelector('.cartitem-qnty').innerText
+        var cartitemprice=cartitems.getElementsByClassName('cartitem-price')[0].innerText       
+                       incrbtn.addEventListener("click",()=>{
+                        ++cartitemqnty;
+                        cartitems.querySelector('.cartitem-qnty').innerText=cartitemqnty
+                        cartitems.getElementsByClassName('cartitem-total')[0].innerText=cartitemqnty*cartitemprice;
+                        carttotal+=parseInt(cartitemprice)
+                document.querySelector('.cartitem-amount').innerText=carttotal
+                       })
+                        decrbtn.addEventListener("click",()=>{
+                        --cartitemqnty;
+                        if(cartitemqnty<=0)
+                        {
+                            cartitems.remove()
+                        }
+                        cartitems.querySelector('.cartitem-qnty').innerText=cartitemqnty
+                        cartitems.getElementsByClassName('cartitem-total')[0].innerText=cartitemqnty*cartitemprice;
+                        carttotal-=parseInt(cartitemprice)
+                document.querySelector('.cartitem-amount').innerText=carttotal
+                       })
+                        clsbtn.addEventListener("click",()=>{
+                            cartitems.remove()
+                            carttotal-=parseInt(cartitems.querySelector('.cartitem-total').innerText)
+                            document.querySelector('.cartitem-amount').innerText=carttotal
+                            count=count-1
+                            if(count<=0)
+                            {
+                                count=0
+                            }
+                            document.getElementsByClassName('cartcount')[0].innerHTML=count
+                        })
+                       });
+                          
+
+
+}) 
+})
+var like=0
+var likebtn=document.querySelectorAll('.like')
+likebtn.forEach(likebtn=>{
+    likebtn.addEventListener("click",()=>{
+        var a=likebtn.getElementsByTagName('i')[0].classList
+        a.toggle("fas")
+    })
+})
+function clearcart()
+{
+    carttotal=0
+    var cartproducts=document.querySelectorAll('.cartitem')
+    for(var i=0;i<cartproducts.length;i++)
+    {
+        cartproducts[i].remove()
+    }
+document.querySelector('.cartitem-amount').innerText=0
+count=0
+document.getElementsByClassName('cartcount')[0].innerHTML=count
+}
+ function placeorder()
+ {
+    if(count<=0)
+    {
+        alert("Please Add atleast one product into cart")
+    }
+    else
+    {
+        alert("Order placed Successfully")
+    }
+ }
+</script>
+
+</body>
+</html>
