@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CALCULATOR</title>
+	<style type="text/css">
+		div{
+			margin-left:500px;
+			margin-top:200px;
+		}
+		.btn{
+			width:50px;
+			height:35px;
+			padding:5px;
+			background:black;
+			color:white;
+			font-weight:bold;
+			border-radius:5px;
+			box-shadow:0px 0px 2px 1px gray;
+		}
+		.btn:hover{
+			background:red;
+			cursor:pointer;
+			border:none;
+		}
+		#place{
+			height:25px;
+			font-size:17px;
+			font-weight:bold;
+			border-bottom:none;
+			color:white;
+		}
+		#place1{
+			height:25px;
+			font-size:17px;
+			font-weight:bold;
+			border-top:none;
+			color:white;
+			text-align:right;
+		}
+		
+
+		table{
+			border:2px solid black;
+			padding: 20px;
+			border-radius:10px;
+			background:black;
+		}
+	</style>
+
+</head>
+<body>
+<div>
+	<table>
+		<tr>
+			<td colspan="4" style="color:red;font-weight:bold;font-size:20px;letter-spacing:8px;text-align:center;">CALCULATOR</td>
+		</tr>
+		<tr>
+			<td colspan="4"><input type="text" id="place" placeholder="Enter Values...." disabled><br><input type="text" id="place1" disabled></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="AC" class="btn" onclick="first()"></td>
+			<td><input type="button" value="←" class="btn" onclick="back1()"></td>
+			<td><input type="button" value="%" class="btn" onclick="numbers('%');myfun()"></td>
+			<td><input type="button" value="/" class="btn" onclick="numbers('/');myfun()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" class="btn" onclick="numbers('7');myfun()"></td>
+			<td><input type="button" value="8" class="btn" onclick="numbers('8');myfun()"></td>
+			<td><input type="button" value="9" class="btn" onclick="numbers('9');myfun()"></td>
+			<td><input type="button" value="x" class="btn" onclick="numbers('*');myfun()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" class="btn" onclick="numbers('4');myfun()"></td>
+			<td><input type="button" value="5" class="btn" onclick="numbers('5');myfun()"></td>
+			<td><input type="button" value="6" class="btn" onclick="numbers('6');myfun()"></td>
+			<td><input type="button" value="-" class="btn" onclick="numbers('-');myfun()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" class="btn" onclick="numbers('1');myfun()"></td>
+			<td><input type="button" value="2" class="btn" onclick="numbers('2');myfun()"></td>
+			<td><input type="button" value="3" class="btn" onclick="numbers('3');myfun()"></td>
+			<td><input type="button" value="+" class="btn" onclick="numbers('+');myfun()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="00" class="btn" onclick="numbers('00');myfun()"></td>
+			<td><input type="button" value="0" class="btn" onclick="numbers('0');myfun()"></td>
+			<td><input type="button" value="." class="btn" onclick="numbers('.');myfun()"></td>
+			<td><input type="button" value="=" class="btn" onclick="slove()"></td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript">
+	function numbers(e)
+	{
+		document.getElementById('place').value+=e
+	}
+	function slove()
+	{
+		var a=document.getElementById('place').value
+		document.getElementById('place').value=eval(a)
+	}
+	function first()
+	{
+		document.getElementById('place').value=""
+		document.getElementById('place1').value=""
+	}
+	function back1()
+	{
+		var x=document.getElementById('place').value
+		var e=x.substr(0,(x.length)-1)
+		document.getElementById('place').value=e
+
+	}
+	function myfun()
+	{
+		document.getElementById('place1').value=eval(document.getElementById('place').value)
+	}
+</script>
+</body>
+</html>
